@@ -1,4 +1,5 @@
 import { FaComments } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -24,13 +25,15 @@ export default function Navbar() {
         </div>
 
         <div className="flex gap-3">
-          <button className="border border-indigo-500 text-indigo-400 px-5 py-2 rounded-xl hover:bg-indigo-500 hover:text-white transition">
+          <Link
+            to="/login"
+            className="border border-indigo-500 px-5 py-2 rounded-xl"
+          >
             Login
-          </button>
-
-          <button className="bg-indigo-600 px-5 py-2 rounded-xl hover:bg-indigo-500 transition">
+          </Link>
+          <Link to="/register" className="bg-indigo-600 px-5 py-2 rounded-xl">
             Register
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
