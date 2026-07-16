@@ -1,146 +1,175 @@
-# 💬 NovaChat
+# 💬 MessagingSystem
 
-> A modern real-time messaging application built with **React**, **Tailwind CSS**, and **Supabase**.
+A modern real-time one-to-one messaging application built with **React**, **Tailwind CSS**, and **Supabase**.
 
-![React](https://img.shields.io/badge/React-19-blue?logo=react)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?logo=tailwind-css)
-![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?logo=supabase)
-![License](https://img.shields.io/badge/License-MIT-green)
+The goal of this project is to provide a clean, secure, and scalable messaging platform with real-time communication, authentication, file sharing, and user profile management.
 
 ---
 
-## 📖 About
+## 🚀 Features
 
-NovaChat is a modern real-time messaging platform designed to provide a fast, secure, and intuitive chatting experience.
+### ✅ Authentication
+- Email & Password Sign Up
+- Email & Password Login
+- Logout
+- Password Reset
+- Session Persistence
 
-The project is being developed as a portfolio and academic project while following modern web development practices. It uses **Supabase** as the backend service, providing authentication, PostgreSQL database, real-time subscriptions, and cloud storage.
+### 👤 User Profiles
+- Username
+- Display Name
+- Avatar
+- Bio
+- Online Status
+- Last Seen
 
----
+### 💬 Messaging
+- One-to-One Chat
+- Real-Time Messaging
+- Read Receipts
+- Conversation History
+- Message Timestamps
 
-## ✨ Features
+### 📎 File Sharing
+- Image Upload
+- Documents
+- Audio Files
+- Video Files
+- Secure Storage
 
-### Authentication
+### 🔒 Security
+- Supabase Authentication
+- Row Level Security (RLS)
+- Protected API Calls
+- Secure Storage Policies
+- User-Based Access Control
 
-* User Registration
-* Secure Login
-* Logout
-* Password Reset
-* Email Verification
-
-### Messaging
-
-* Real-Time One-to-One Chat
-* Group Chats
-* Message Read Status
-* Typing Indicator
-* Online / Offline Status
-* Message Search
-* Emoji Support
-
-### Media Sharing
-
-* Image Upload
-* File Sharing
-* Voice Messages *(Planned)*
-* Video Sharing *(Planned)*
-
-### User Profile
-
-* Edit Profile
-* Upload Avatar
-* User Bio
-* Last Seen Status
-
-### Settings
-
-* Dark Mode
-* Notification Settings
-* Privacy Settings
-* Block Users
+### ⚡ Performance
+- Optimized Database Indexes
+- Realtime Updates
+- Fast Message Loading
+- Efficient Queries
 
 ---
 
-## 🛠 Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
+## Frontend
 
-* React
-* JavaScript
-* Vite
-* Tailwind CSS
-* React Router DOM
-* React Icons
-* React Hot Toast
+- React
+- JavaScript (ES6+)
+- Vite
+- Tailwind CSS
+- React Router
+- React Icons
 
-### Backend
+## Backend
 
-* Supabase Authentication
-* Supabase PostgreSQL Database
-* Supabase Realtime
-* Supabase Storage
-
-### Development Tools
-
-* ESLint
-* Prettier
-* Git & GitHub
-* VS Code
+- Supabase
+- PostgreSQL
+- Supabase Auth
+- Supabase Realtime
+- Supabase Storage
 
 ---
 
-## 📁 Project Structure
+# 📂 Project Structure
 
-```text
-src/
+```
+MessagingSystem
 │
-├── assets/
-├── components/
-├── context/
-├── hooks/
-├── layouts/
-├── pages/
-├── routes/
-├── services/
-├── styles/
-├── utils/
+├── client
+│   ├── public
+│   │
+│   ├── src
+│   │   ├── assets
+│   │   ├── components
+│   │   │   ├── common
+│   │   │   ├── chat
+│   │   │   ├── layout
+│   │   │   └── ui
+│   │   │
+│   │   ├── context
+│   │   ├── hooks
+│   │   ├── pages
+│   │   │   ├── Landing
+│   │   │   ├── Login
+│   │   │   ├── Register
+│   │   │   ├── Dashboard
+│   │   │   ├── Profile
+│   │   │   └── Settings
+│   │   │
+│   │   ├── services
+│   │   ├── utils
+│   │   ├── lib
+│   │   ├── routes
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── .env
+│   ├── package.json
+│   └── vite.config.js
 │
-├── App.jsx
-└── main.jsx
+├── supabase
+│   ├── config.toml
+│   ├── seed.sql
+│   └── migrations
+│       ├── 001_initial_schema.sql
+│       ├── 002_indexes.sql
+│       ├── 003_functions.sql
+│       ├── 004_storage.sql
+│       ├── 005_rls.sql
+│       └── 006_realtime.sql
+│
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+# 🗄 Database Schema
 
-### Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/novachat.git
+```
+auth.users
+      │
+      ▼
+profiles
+      │
+      ▼
+conversations
+      │
+      ▼
+messages
+      │
+      ▼
+attachments
 ```
 
-### Navigate to the Project
+---
+
+# 📦 Installation
+
+Clone the repository.
 
 ```bash
-cd novachat
+git clone https://github.com/devkotakalyan/MessagingSystem.git
 ```
 
-### Install Dependencies
+Open the project.
 
 ```bash
+cd MessagingSystem
+```
+
+Install dependencies.
+
+```bash
+cd client
 npm install
 ```
 
-### Configure Environment Variables
-
-Create a `.env` file in the project root.
-
-```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-### Start Development Server
+Run the development server.
 
 ```bash
 npm run dev
@@ -148,75 +177,132 @@ npm run dev
 
 ---
 
-## 📦 Build for Production
+# ⚙ Environment Variables
 
-```bash
-npm run build
+Create a `.env` file inside the `client` directory.
+
+```env
+VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+VITE_SUPABASE_PUBLISHABLE_KEY=YOUR_SUPABASE_ANON_KEY
 ```
 
 ---
 
-## 📸 Screenshots
+# 🛢 Database Setup
 
-Coming Soon...
+Initialize Supabase.
 
----
+```bash
+supabase init
+```
 
-## 📌 Roadmap
+Link your project.
 
-* Authentication
-* Real-Time Chat
-* Friend Requests
-* Group Chat
-* Image Sharing
-* File Sharing
-* Voice Messages
-* Video Calls
-* Push Notifications
-* Message Reactions
-* Admin Dashboard
+```bash
+supabase link --project-ref YOUR_PROJECT_ID
+```
 
----
+Push the database migrations.
 
-## 📚 Learning Goals
-
-This project focuses on learning and implementing:
-
-* Modern React Development
-* Component-Based Architecture
-* State Management
-* Authentication
-* PostgreSQL Database Design
-* Real-Time Applications
-* Responsive UI Design
-* API Integration
-* Git Workflow
-* Clean Code Practices
+```bash
+supabase db push
+```
 
 ---
 
-## 🤝 Contributing
+# 🔄 Realtime
 
-Contributions, issues, and feature suggestions are welcome.
+Realtime is powered by **Supabase Realtime**.
 
-Feel free to fork the repository and submit a pull request.
+Updates include:
+
+- New Messages
+- Online Status
+- Read Receipts
+- Profile Updates
+
+without refreshing the page.
 
 ---
 
-## 📄 License
+# 🔐 Security
+
+This project uses:
+
+- Supabase Authentication
+- PostgreSQL Row Level Security
+- Secure Storage Policies
+- User-Based Permissions
+
+Every database request is protected using Row Level Security (RLS).
+
+---
+
+# 📸 Planned Features
+
+- Emoji Support
+- Typing Indicator
+- Voice Messages
+- Video Messages
+- Message Search
+- Pinned Chats
+- Notifications
+- Dark Mode
+- Group Chats
+- Message Reactions
+- Reply to Messages
+- Forward Messages
+- Message Editing
+- Message Deletion
+- Media Gallery
+- User Blocking
+
+---
+
+# 🧪 Development Status
+
+| Feature | Status |
+|----------|--------|
+| Landing Page | ✅ |
+| Authentication | 🚧 |
+| Database Schema | 🚧 |
+| Real-Time Chat | ⏳ |
+| Profile System | ⏳ |
+| File Upload | ⏳ |
+| Notifications | ⏳ |
+| Deployment | ⏳ |
+
+---
+
+# 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+1. Fork the repository.
+2. Create a new branch.
+3. Commit your changes.
+4. Push the branch.
+5. Open a Pull Request.
+
+---
+
+# 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Kalyan Devkota**
 
-IT Student | Web Developer | React Enthusiast
-
-GitHub: https://github.com/yourusername
+- GitHub: https://github.com/devkotakalyan
+- Project: MessagingSystem
 
 ---
 
-⭐ If you find this project helpful, consider giving it a star.
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+It helps the project reach more developers and supports future improvements.
